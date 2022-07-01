@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32611.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6959C9D4-098B-4CAE-95AB-B3BE98B5A3A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4A66FCBE-0A6D-4D5A-8C61-1763880421DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsMediatrExample", "src\CqrsMediatrExample\CqrsMediatrExample.csproj", "{6CE8267B-76B7-4B43-8B18-FB6FFD38DB42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CE8267B-76B7-4B43-8B18-FB6FFD38DB42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CE8267B-76B7-4B43-8B18-FB6FFD38DB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CE8267B-76B7-4B43-8B18-FB6FFD38DB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE8267B-76B7-4B43-8B18-FB6FFD38DB42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CE8267B-76B7-4B43-8B18-FB6FFD38DB42} = {4A66FCBE-0A6D-4D5A-8C61-1763880421DE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AEC07D7-974C-446E-86FF-C7519EC5EF12}
+	EndGlobalSection
+EndGlobal
