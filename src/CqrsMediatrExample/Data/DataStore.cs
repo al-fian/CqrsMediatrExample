@@ -25,5 +25,10 @@ namespace CqrsMediatrExample.Data
         {
             return await Task.FromResult(_products!);
         }
+
+        public async Task<Product> GetAProductById(int id)
+        {
+            return await Task.FromResult(_products?.SingleOrDefault(p => p.Id == id)!);
+        }
     }
 }
