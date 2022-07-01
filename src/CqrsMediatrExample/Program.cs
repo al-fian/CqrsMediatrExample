@@ -1,3 +1,4 @@
+using CqrsMediatrExample.Data;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddMediatR(typeof(Program));
+builder.Services.AddSingleton<DataStore>();
 
 var app = builder.Build();
 

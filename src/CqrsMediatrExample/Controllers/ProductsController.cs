@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using CqrsMediatrExample.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,12 @@ namespace CqrsMediatrExample.Controllers
         public ProductsController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        public async Task<ActionResult> GetAllProducts()
+        {
+            var products = await _mediator.Send(new GetProductsQuery());
+            return Ok(products);
         }
     }
 }
