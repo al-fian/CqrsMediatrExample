@@ -7,7 +7,7 @@ namespace CqrsMediatrExample.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductsController : ControllerBase, IProductsController
     {
         private readonly IMediator _mediator;
 

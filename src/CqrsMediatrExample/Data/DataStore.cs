@@ -2,7 +2,7 @@
 
 namespace CqrsMediatrExample.Data
 {
-    public class DataStore
+    public class DataStore : IDataStore
     {
         private static List<Product>? _products;
         public DataStore()
@@ -21,7 +21,7 @@ namespace CqrsMediatrExample.Data
             await Task.CompletedTask;
         }
 
-        public async Task<IEnumerable<Product>> GetAllProducts()
+        public async Task<IEnumerable<Product>> GetAListOfProducts()
         {
             return await Task.FromResult(_products!);
         }
