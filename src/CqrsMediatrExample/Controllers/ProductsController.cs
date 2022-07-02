@@ -1,5 +1,6 @@
 ﻿using CqrsMediatrExample.Commands;
 using CqrsMediatrExample.Models;
+using CqrsMediatrExample.Notifications;
 using CqrsMediatrExample.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -25,7 +26,7 @@ namespace CqrsMediatrExample.Controllers
             return Ok(products);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}", Name = "GetProductById")]
         public async Task<ActionResult> GetProductBy(int id)
         {
             var product = await _mediator.Send(new GetProductByIdCommand(id));
@@ -37,7 +38,9 @@ namespace CqrsMediatrExample.Controllers
         {
             await _mediator.Send(new AddProductCommand(product));
 
-            return StatusCode(201);
+            await _mediator.Publish(new ProductAddedNotification(product));
+
+            return CreatedAtRoute("GetProductById", new {id = product.Id}, product);
 
         }
     }

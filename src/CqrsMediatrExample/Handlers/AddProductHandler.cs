@@ -1,10 +1,11 @@
 ﻿using CqrsMediatrExample.Commands;
 using CqrsMediatrExample.Data;
+using CqrsMediatrExample.Models;
 using MediatR;
 
 namespace CqrsMediatrExample.Handlers
 {
-    public class AddProductHandler : IRequestHandler<AddProductCommand, Unit>
+    public class AddProductHandler : IRequestHandler<AddProductCommand, Product>
     {
         private readonly DataStore _dataStore;
 
@@ -13,11 +14,11 @@ namespace CqrsMediatrExample.Handlers
             _dataStore = dataStore;
         }
 
-        public async Task<Unit> Handle(AddProductCommand request, CancellationToken cancellationToken)
+        public async Task<Product> Handle(AddProductCommand request, CancellationToken cancellationToken)
         {
             await _dataStore.AddProduct(request.Product);
 
-            return Unit.Value;
+            return request.Product;
         }
     }
 }

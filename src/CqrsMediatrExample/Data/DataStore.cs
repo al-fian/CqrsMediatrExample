@@ -30,5 +30,12 @@ namespace CqrsMediatrExample.Data
         {
             return await Task.FromResult(_products?.SingleOrDefault(p => p.Id == id)!);
         }
+
+        public async Task EventOccured(Product product, string evt)
+        {
+            var singleProduct = _products?.Single(p => p.Id == product.Id);
+            singleProduct!.Name = $"{product.Name} event: {evt}";
+            await Task.CompletedTask;
+        }
     }
 }
