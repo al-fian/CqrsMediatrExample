@@ -5,7 +5,7 @@ using MediatR;
 
 namespace CqrsMediatrExample.Handlers
 {
-    public class GetProductByIdHandler : IRequestHandler<GetProductByIdCommand, Product>
+    public class GetProductByIdHandler : IRequestHandler<GetProductByIdCommand, Product>, IGetProductByIdHandler
     {
         private readonly DataStore _dataStore;
 
